@@ -1,0 +1,187 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    background-image: url('https://source.unsplash.com/1600x1000/?landscape');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+header{
+    padding: 20px;
+    background-color: rgba(167, 167, 167, 38%);
+}
+.busqueda{
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+
+}
+input.buscar {
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: black 2px 2px 8px ;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: white
+}
+input.placeholder{
+    color: white;
+}
+button {
+    padding: 5px;
+    border-radius: 20px;
+    border-style: none;
+    background: white;
+    box-shadow: black 2px 2px 8px ;
+    cursor: pointer;
+}
+.detalles_clima{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.detalles_clima h2{
+    text-align: center;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.nubosidad{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.humedad{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.viento{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.temperatura{
+    font-size: 60px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: rgb(255, 251, 251);
+    text-shadow: 5px 2px 8px black; 
+}
+.ciudad{
+    font-size: 25px;
+    padding-bottom: 80px;
+    color: white;
+    text-align: center;
+    text-shadow: 5px 2px 8px black;
+}
+.detalles_dia{
+    text-align: center;
+    color: white;
+    text-shadow: 5px 2px 8px black;
+}
+footer{
+    position: absolute;
+    bottom: 0%;
+    padding-top: 90px;
+    color: white;
+    font-weight: 700;
+    right: 35%;
+}
+footer p{
+    text-align: center;
+    text-shadow: 5px 2px 8px black;
+}
+
+/* RESPONSIVE */
+
+/*Moviles en horizontal o tables verticales*/
+@media screen and (min-width: 768px){
+    header{
+        margin: 20px;
+        border-radius: 30px;
+    }
+    .busqueda{
+        padding: 20px;
+        justify-content: center;
+    }
+    .buscar{
+        margin-right: 15px;
+    }
+    .detalles_clima{
+        font-size: 20px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 40%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .buscar{
+        padding: 10px;
+        width: 300px;
+    }
+    button{
+        width: 40px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 44%;
+    }
+}
+@media screen and (min-width: 1650px){
+    .temperatura{
+        font-size: 100px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 45%;
+    }
+}
+@media screen and (min-width: 2000px){
+    .detalles_clima{
+        font-size: 30px;
+    }
+    .buscar{
+        padding: 20px;
+        width: 400px;
+    }
+    button{
+        width: 50px;
+    }
+    .ciudad{
+        font-size: 40px;
+    }
+    .detalles_dia{
+        font-size: 30px;
+        padding: 60px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 47%;
+    }
+}

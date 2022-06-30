@@ -21,7 +21,6 @@ temperatura3("13 Km/h");
 
 
 
-
 //Peticion de preferencia en la visualizacion de la temperatura//
 for(i = 0; i < 1; i++){
     let peticion = prompt("¿En que medida desea visualizar la temperatura? -Celsius -Fahrenheit -Kelvin");
@@ -29,6 +28,8 @@ for(i = 0; i < 1; i++){
         document.getElementById("Clima").innerHTML = "75.2°F";
     } else if (peticion == "Kelvin") {
         document.getElementById("Clima").innerHTML = "297.15°K";
+    } else if (peticion == "Celcius"){
+        document.getElementById("Clima").innerHTML = "24°C"
     }
 }
 

@@ -29,7 +29,7 @@ for(i = 0; i < 1; i++){
     } else if (peticion == "Kelvin") {
         document.getElementById("Clima").innerHTML = "297.15°K";
     } else if (peticion == "Celcius"){
-        document.getElementById("Clima").innerHTML = "24°C"
+        document.getElementById("Clima").innerHTML = "24°C";
     }
 }
 

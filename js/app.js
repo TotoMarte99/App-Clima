@@ -1,5 +1,5 @@
 
-
+//Aplicaciones de funciones//
 function temperatura1(nubosidad) {
     console.log("La nubosidad hoy en Rosario es de:");
     console.log(nubosidad);
@@ -19,17 +19,20 @@ temperatura1("25%");
 temperatura2("78%");
 temperatura3("13 Km/h");
 
+
+
+
+//Peticion de preferencia en la visualizacion de la temperatura//
+for(i = 0; i < 1; i++){
+    let peticion = prompt("¿En que medida desea visualizar la temperatura? -Celsius -Fahrenheit -Kelvin");
+    if (peticion == "Fahrenheit") {
+        document.getElementById("Clima").innerHTML = "75.2°F";
+    } else if (peticion == "Kelvin") {
+        document.getElementById("Clima").innerHTML = "297.15°K";
+    }
+}
+
 function magnitud() {
     swal(" ¡Modificación realizada ! ", " ");
 }
 magnitud();
-
-let peticion = prompt(
-    "¿En que medida desea visualizar la temperatura? -Celsius -Fahrenheit -Kelvin"
-);
-
-if (peticion == "Fahrenheit") {
-    document.getElementById("Clima").innerHTML = "75.2°F";
-} else if (peticion == "Kelvin") {
-    document.getElementById("Clima").innerHTML = "297.15°K";
-}

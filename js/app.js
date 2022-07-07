@@ -1,17 +1,17 @@
 
 //Aplicaciones de funciones//
 function temperatura1(nubosidad) {
-    console.log("La nubosidad hoy en Rosario es de:");
+    console.log("La nubosidad HOY en Rosario es de:");
     console.log(nubosidad);
 }
 
 function temperatura2(humedad) {
-    console.log("La humedad hoy en Rosario es de:");
+    console.log("La humedad HOY en Rosario es de:");
     console.log(humedad);
 }
 
 function temperatura3(viento) {
-    console.log("El viento hoy en Rosario se encuentra en:");
+    console.log("El viento HOY en Rosario se encuentra en:");
     console.log(viento);
 }
 
@@ -37,3 +37,45 @@ function magnitud() {
     swal(" ¡Modificación realizada ! ", " ");
 }
 magnitud();
+
+class ClimaMañana{
+    constructor(humedad,viento,nubosidad,sesacionTermica,temperatura){
+        this.humedad = humedad
+        this.viento = viento
+        this.nubosidad = nubosidad
+        this.sesacionTermica = sesacionTermica
+        this.temperatura = temperatura
+    }
+
+}
+class ClimaPasadoMañana{
+    constructor(humedad,viento,nubosidad,sesacionTermica,temperatura){
+        this.humedad = humedad
+        this.viento = viento
+        this.nubosidad = nubosidad
+        this.sesacionTermica = sesacionTermica
+        this.temperatura = temperatura
+    }
+
+}
+class ClimaATresDias{
+    constructor(humedad,viento,nubosidad,sesacionTermica,temperatura){
+        this.humedad = humedad
+        this.viento = viento
+        this.nubosidad = nubosidad
+        this.sesacionTermica = sesacionTermica
+        this.temperatura = temperatura
+    }
+
+}
+const ClimaParaMañana = []
+ClimaParaMañana.push(new ClimaMañana('15%','2Km/h','19%','12°','15°'))
+
+const ClimaPMañana = []
+ClimaPMañana.push(new ClimaPasadoMañana('0.2%','20Km/h','0.1%','3°','9°'))
+
+const ClimaTresDias = []
+ClimaTresDias.push(new ClimaATresDias('15%','20Km/h','2%','15°','19°')) 
+
+const climafuturo = ClimaParaMañana.concat(ClimaPMañana.concat(ClimaTresDias))
+console.log(climafuturo)

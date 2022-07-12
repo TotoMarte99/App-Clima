@@ -33,12 +33,30 @@ input.placeholder{
     color: white;
 }
 button {
-    padding: 5px;
+    padding: 6px;
     border-radius: 20px;
     border-style: none;
     background: white;
     box-shadow: black 2px 2px 8px ;
     cursor: pointer;
+}
+.celcius img{
+    width: 30px;
+    height: 30px;
+    
+}
+.farenheit img{
+    width: 30px;
+    height: 30px;
+    
+}
+.kelvin img{
+    width: 30px;
+    height: 30px;
+    
+}
+.celcius .farenheit .kelvin{
+    background-color: transparent;
 }
 .detalles_clima{
     display: flex;
@@ -185,3 +203,5 @@ footer p{
         right: 47%;
     }
 }
+
+

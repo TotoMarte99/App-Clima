@@ -13,7 +13,7 @@ function advertencia() {
     } else {
     console.log("Su ubicacion es " + entrada);
     }
-}
+} 
 advertencia();
 
 //Peticion de preferencia en la visualizacion de la temperatura//
@@ -108,7 +108,7 @@ const lluviaParaTres = ClimaTresDias.some(
 console.log(lluviaPmañana + ": Recuerde llevar paraguas pasado mañana");
 
 //Funcion que brinda recomendaciones para salir a la calle//
-function Recomendaciones() {
+ function Recomendaciones() {
     reco = Number(
     prompt(
         "Desea obtener recomendaciones para salir hoy?\n\n (Ingrese n°)\n\n 1) Si \n 2) No"
@@ -121,7 +121,7 @@ function Recomendaciones() {
     } else if (reco == 2) {
         alert("Que tenga un excelente dia :) ");
     }
-}
+} 
 Recomendaciones();
 
 //Alert indicando fin del ciclo interactivo//
@@ -129,3 +129,8 @@ function magnitud() {
     swal(" ¡Hasta luego ! ", " ");
 }
 magnitud();
+
+
+//Div creado Js
+
+

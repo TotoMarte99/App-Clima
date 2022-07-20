@@ -106,18 +106,7 @@ button {
     color: white;
     text-shadow: 5px 2px 8px black;
 }
-footer{
-    position: absolute;
-    bottom: 0%;
-    padding-top: 90px;
-    color: white;
-    font-weight: 700;
-    right: 35%;
-}
-footer p{
-    text-align: center;
-    text-shadow: 5px 2px 8px black;
-}
+
 
 /* RESPONSIVE */
 

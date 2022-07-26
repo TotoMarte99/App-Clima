@@ -1,93 +1,142 @@
-const hoy = new Date("Octubre 10, 2022");
-const dia = document.getElementById("fecha_1");
-dia.innerHTML = `Fecha de hoy: ${hoy}`;
-dia.style.color = "white";
+//Imports de Main//
+import { ClimaParaMañana, ClimaPMañana, ClimaTresDias, ClimaHoy} from "./main.js";
 
-//Aplicaciones de funciones//
-function advertencia() {
-    let entrada = prompt("Ingrese su localizacion");
-    if (entrada == "Rosario") {
-    alert(
-        "Su ubicacion es Rosario: El viento norte amenaza con traer el humo de las islas"
-    );
-    } else {
-    console.log("Su ubicacion es " + entrada);
-    }
-} 
-advertencia();
-
-//Peticion de preferencia en la visualizacion de la temperatura//
+//Declaracion de selectores//
 let botonCelcius = document.getElementById("boton_celcius");
 botonCelcius.addEventListener("click", cambiarAcelcius);
-
-function cambiarAcelcius() {
-    document.getElementById("Clima").innerHTML = "24°C";
-}
-
 let botonFarenheit = document.getElementById("boton_farenheit");
 botonFarenheit.addEventListener("click", cambiarAfarenheit);
 
+//Cambio de fondos//
+let cambio1 = document.querySelector("#climaMañana");
+cambio1.addEventListener("click", cambioAlluvia);
+cambio1.style.cursor = "pointer";
+var viento = document.querySelector("#viento");
+viento.style.color = "red";
+let cambio2 = document.querySelector("#climaPasadoMañana");
+cambio2.addEventListener("click", cambioAsoleado);
+cambio2.style.cursor = "pointer";
+let cambio3 = document.querySelector("#Clima");
+cambio3.addEventListener("click", cambioHoy);
+cambio3.style.cursor = "pointer";
+
+//Fecha//
+const hoy = new Date("Octubre 10, 2022");
+const dia = document.getElementById("fecha_1");
+dia.style.fontWeight = "700";
+dia.style.textDecoration = "underline";
+dia.innerHTML = `${hoy}`;
+dia.style.color = "white";
+
+
+function cambioAlluvia(){
+    var fondo = document.querySelector("#body");
+    fondo.style.backgroundImage = "url('./img/pexels-genaro-servín-763398.jpg')";
+    fondo.style.backgroundSize = "cover";
+    fondo.style.backgroundRepeat = "no-repeat";
+    fondo.style.backgroundHeight = "100vh";
+    document.querySelector("#nubosidad").innerHTML = `${ClimaParaMañana[0].nubosidad}`
+    document.querySelector("#humedad").innerHTML = `${ClimaParaMañana[0].humedad}`
+    document.querySelector("#viento").innerHTML = `${ClimaParaMañana[0].viento}`
+    const hoy = new Date("Octubre 11, 2022");
+    const dia = document.getElementById("fecha_1");
+    dia.innerHTML = `${hoy}`;
+    dia.style.color = "white";
+    var viento = document.querySelector("#viento");
+    viento.style.color = "white";
+    
+    if(ClimaParaMañana[0].viento > '30'){
+        var viento = document.querySelector("#viento");
+        viento.style.color = "red";
+    }
+} 
+
+function cambioAsoleado(){
+    var fondo = document.querySelector("#body");
+    fondo.style.backgroundImage = "url('./img/pexels-simon-berger-1353126.jpg')";
+    fondo.style.backgroundSize = "cover";
+    fondo.style.backgroundRepeat = "no-repeat";
+    fondo.style.backgroundHeight = "100vh";
+    document.querySelector("#nubosidad").innerHTML = `${ClimaPMañana[0].nubosidad}`
+    document.querySelector("#humedad").innerHTML = `${ClimaPMañana[0].humedad}`
+    document.querySelector("#viento").innerHTML = `${ClimaPMañana[0].viento}`
+    const hoy = new Date("Octubre 12, 2022");
+    const dia = document.getElementById("fecha_1");
+    dia.innerHTML = `${hoy}`;
+    dia.style.color = "white";
+
+    if(ClimaPMañana[0].viento > '30'){
+        var viento = document.querySelector("#viento");
+        viento.style.color = "red";
+    }
+}
+
+function cambioHoy(){
+    var fondo = document.querySelector("#body");
+    fondo.style.backgroundImage = "url('https://source.unsplash.com/1600x1000/?landscape')";
+    fondo.style.backgroundSize = "cover";
+    fondo.style.backgroundRepeat = "no-repeat";
+    fondo.style.backgroundHeight = "100vh";
+    document.querySelector("#nubosidad").innerHTML = `${ClimaHoy[0].nubosidad}`
+    document.querySelector("#humedad").innerHTML = `${ClimaHoy[0].humedad}  `
+    document.querySelector("#viento").innerHTML = `${ClimaHoy[0].viento}`
+    const hoy = new Date("Octubre 10, 2022");
+    const dia = document.getElementById("fecha_1");
+    dia.innerHTML = `${hoy}`;
+    dia.style.color = "white";
+
+    if(ClimaHoy[0].viento > '30'){
+        var viento = document.querySelector("#viento");
+        viento.style.color = "red";
+    }
+}
+
+
+//Funciones de los eventos//
+function cambiarAcelcius() {
+    document.getElementById("Clima").innerHTML = `<p class="clima_hoy">Hoy 🌥️</p>
+    <h1>
+    ${ClimaHoy[0].temperatura + "C"}
+    </h1>`;
+    document.querySelector(
+    "#climaMañana"
+    ).innerHTML = `<p class="temperatura_mañana">Domingo ⛈️​ </p>
+    <h1>
+    ${ClimaParaMañana[0].temperatura + "C"}
+    </h1>`;
+    document.querySelector(
+    "#climaPasadoMañana"
+    ).innerHTML = `<p class="temperatura_mañana">Lunes 🌤️​</p>
+    <h1>
+    ${ClimaPMañana[0].temperatura + "C"}
+    </h1>`;
+}
+
 function cambiarAfarenheit() {
-    document.getElementById("Clima").innerHTML = "75.2°F";
+    document.getElementById("Clima").innerHTML = `<p class="clima_hoy">Hoy 🌥️ </p>
+    <h1>
+    ${(24 * 9) / 5 + 32 + "°F"}
+    </h1>`;
+    document.querySelector(
+    "#climaMañana"
+    ).innerHTML = `<p class="temperatura_mañana">Domingo ⛈️​ </p>
+    <h1>
+    ${(15 * 9) / 5 + 32 + "°F"}
+    </h1>`;
+    document.querySelector(
+    "#climaPasadoMañana"
+    ).innerHTML = `<p class="temperatura_mañana">Lunes 🌤️​</p>
+    <h1>
+    ${(9 * 9) / 5 + 32 + "°F"}
+    </h1>`;
 }
-
-let botonKelvin = document.getElementById("boton_kelvin");
-botonKelvin.addEventListener("click", cambiarAkelvin);
-
-function cambiarAkelvin() {
-    document.getElementById("Clima").innerHTML = "297.15°K";
-}
-
-//Creacion de Arrays que nos permiten visualizar la temperatura en los proximos dias//
-class ClimaMañana {
-    constructor(humedad, viento, nubosidad, lluvia, temperatura) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    }
-}
-class ClimaPasadoMañana {
-    constructor(humedad, viento, nubosidad, lluvia, temperatura) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    }
-}
-class ClimaATresDias {
-    constructor(humedad, viento, nubosidad, lluvia, temperatura) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    }
-}
-const ClimaParaMañana = [];
-ClimaParaMañana.push(
-    new ClimaMañana("15%", "2Km/h", "19%", "No llueve", "15°")
-);
-
-const ClimaPMañana = [];
-ClimaPMañana.push(
-    new ClimaPasadoMañana("0.2%", "35Km/h", "0.1%", "llueve", "9°")
-);
-
-const ClimaTresDias = [];
-ClimaTresDias.push(new ClimaATresDias("15%", "20Km/h", "2%", "llueve", "19°"));
-
-const climafuturo = ClimaParaMañana.concat(ClimaPMañana.concat(ClimaTresDias));
-console.log(climafuturo);
 
 //Uso de for para recorrer el array y brindar por consola una advertencia sobre los altos vientos//
 for (const viento of ClimaPMañana) {
     console.log(
-        "Advertencia: hoy el viento es de " +
-        viento.viento +
-        " Recomendamos suspender actividades nauticas"
+    "Advertencia: hoy el viento es de " +
+    viento.viento +
+    " Recomendamos suspender actividades nauticas"
     );
 }
 
@@ -105,32 +154,4 @@ console.log(lluviaPmañana + ": Recuerde mañana, llevar paraguas");
 const lluviaParaTres = ClimaTresDias.some(
     (ClimaTresDias) => ClimaTresDias.lluvia === "llueve"
 );
-console.log(lluviaPmañana + ": Recuerde llevar paraguas pasado mañana");
-
-//Funcion que brinda recomendaciones para salir a la calle//
- function Recomendaciones() {
-    reco = Number(
-    prompt(
-        "Desea obtener recomendaciones para salir hoy?\n\n (Ingrese n°)\n\n 1) Si \n 2) No"
-    )
-    );
-    if (reco == 1) {
-        alert(
-        "El dia de hoy le sugerimos salir a la calle con vestimenta ligera y con una botella de agua"
-        );
-    } else if (reco == 2) {
-        alert("Que tenga un excelente dia :) ");
-    }
-} 
-Recomendaciones();
-
-//Alert indicando fin del ciclo interactivo//
-function magnitud() {
-    swal(" ¡Hasta luego ! ", " ");
-}
-magnitud();
-
-
-//Div creado Js
-
-
+console.log(lluviaParaTres + ": No necesita llevar paraguas pasado mañana");

@@ -1,5 +1,5 @@
 //Imports de Main//
-import { ClimaParaMañana, ClimaPMañana, ClimaTresDias, ClimaHoy} from "./main.js";
+import { ClimaParaMañana, ClimaPMañana, ClimaHoy} from "./main.js";
 
 //Declaracion de selectores//
 let botonCelcius = document.getElementById("boton_celcius");
@@ -21,74 +21,83 @@ cambio3.addEventListener("click", cambioHoy);
 cambio3.style.cursor = "pointer";
 
 //Fecha//
-const hoy = new Date("Octubre 10, 2022");
+const DateTime = luxon.DateTime
 const dia = document.getElementById("fecha_1");
 dia.style.fontWeight = "700";
 dia.style.textDecoration = "underline";
-dia.innerHTML = `${hoy}`;
-dia.style.color = "white";
+dia.style.color = "white"; 
+const dt = DateTime.now();
+dt.year
+dt.month   
+dt.day     
+
+dia.innerHTML = `Hoy ${dt.day}/${dt.month}/${dt.year}`;
 
 
 function cambioAlluvia(){
     var fondo = document.querySelector("#body");
     fondo.style.backgroundImage = "url('./img/pexels-genaro-servín-763398.jpg')";
     fondo.style.backgroundSize = "cover";
-    fondo.style.backgroundRepeat = "no-repeat";
-    fondo.style.backgroundHeight = "100vh";
+    fondo.style.height = "100vh"
     document.querySelector("#nubosidad").innerHTML = `${ClimaParaMañana[0].nubosidad}`
     document.querySelector("#humedad").innerHTML = `${ClimaParaMañana[0].humedad}`
     document.querySelector("#viento").innerHTML = `${ClimaParaMañana[0].viento}`
-    const hoy = new Date("Octubre 11, 2022");
+    const DateTime = luxon.DateTime
     const dia = document.getElementById("fecha_1");
-    dia.innerHTML = `${hoy}`;
-    dia.style.color = "white";
-    var viento = document.querySelector("#viento");
-    viento.style.color = "white";
+    dia.style.fontWeight = "700";
+    dia.style.textDecoration = "underline";
+    dia.style.color = "white"; 
+    const dt = DateTime.now();
+    dt.year
+    dt.month   
+    dt.day     
+    dia.innerHTML = `Domingo ${dt.day + 1}/${dt.month}/${dt.year}`;
+
+    //Operador Ternario//
+    ClimaParaMañana[0].viento < '30' ? viento.style.color = "white" : "red";
     
-    if(ClimaParaMañana[0].viento > '30'){
-        var viento = document.querySelector("#viento");
-        viento.style.color = "red";
-    }
 } 
 
 function cambioAsoleado(){
     var fondo = document.querySelector("#body");
     fondo.style.backgroundImage = "url('./img/pexels-simon-berger-1353126.jpg')";
     fondo.style.backgroundSize = "cover";
-    fondo.style.backgroundRepeat = "no-repeat";
-    fondo.style.backgroundHeight = "100vh";
+    fondo.style.height = "100vh"
     document.querySelector("#nubosidad").innerHTML = `${ClimaPMañana[0].nubosidad}`
     document.querySelector("#humedad").innerHTML = `${ClimaPMañana[0].humedad}`
     document.querySelector("#viento").innerHTML = `${ClimaPMañana[0].viento}`
-    const hoy = new Date("Octubre 12, 2022");
-    const dia = document.getElementById("fecha_1");
-    dia.innerHTML = `${hoy}`;
-    dia.style.color = "white";
-
-    if(ClimaPMañana[0].viento > '30'){
-        var viento = document.querySelector("#viento");
-        viento.style.color = "red";
-    }
+    const dt = DateTime.now();
+    dt.year
+    dt.month   
+    dt.day     
+    dia.innerHTML = `Lunes ${dt.day + 2}/${dt.month}/${dt.year}`;
+    
+    //Operador Ternario//
+    ClimaPMañana[0].viento > '30' ? viento.style.color = "red" : "white";
 }
 
 function cambioHoy(){
     var fondo = document.querySelector("#body");
     fondo.style.backgroundImage = "url('https://source.unsplash.com/1600x1000/?landscape')";
     fondo.style.backgroundSize = "cover";
-    fondo.style.backgroundRepeat = "no-repeat";
-    fondo.style.backgroundHeight = "100vh";
+    fondo.style.height = "100vh"
     document.querySelector("#nubosidad").innerHTML = `${ClimaHoy[0].nubosidad}`
     document.querySelector("#humedad").innerHTML = `${ClimaHoy[0].humedad}  `
     document.querySelector("#viento").innerHTML = `${ClimaHoy[0].viento}`
-    const hoy = new Date("Octubre 10, 2022");
+    const DateTime = luxon.DateTime
     const dia = document.getElementById("fecha_1");
-    dia.innerHTML = `${hoy}`;
-    dia.style.color = "white";
+    dia.style.fontWeight = "700";
+    dia.style.textDecoration = "underline";
+    dia.style.color = "white"; 
+    const dt = DateTime.now();
+    dt.year
+    dt.month   
+    dt.day     
 
-    if(ClimaHoy[0].viento > '30'){
-        var viento = document.querySelector("#viento");
-        viento.style.color = "red";
-    }
+    dia.innerHTML = `Hoy ${dt.day}/${dt.month}/${dt.year}`;
+
+    //Operador Ternario//
+    ClimaHoy[0].viento > '30' ? viento.style.color = "red" : "white";
 }
 
 
@@ -140,7 +149,13 @@ for (const viento of ClimaPMañana) {
     );
 }
 
+
 //Uso de Metodos de busqueda sobre el Array//
+const lluviaHoy = ClimaHoy.some(
+    (ClimaHoy)=> ClimaHoy.lluvia === "llueve"
+);
+console.log(lluviaHoy + ": Hoy no va a necesitar paraguas");
+
 const lluvia = ClimaParaMañana.some(
     (ClimaParaMañana) => ClimaParaMañana.lluvia === "llueve"
 );
@@ -150,8 +165,3 @@ const lluviaPmañana = ClimaPMañana.some(
     (ClimaPMañana) => ClimaPMañana.lluvia === "llueve"
 );
 console.log(lluviaPmañana + ": Recuerde mañana, llevar paraguas");
-
-const lluviaParaTres = ClimaTresDias.some(
-    (ClimaTresDias) => ClimaTresDias.lluvia === "llueve"
-);
-console.log(lluviaParaTres + ": No necesita llevar paraguas pasado mañana");

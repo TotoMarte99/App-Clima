@@ -4,32 +4,22 @@ localStorage.setItem('Ubicacion', 'Rosario');
 
 class ClimaMañana {
     constructor(humedad, viento, nubosidad, lluvia, temperatura,id) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    this.id = id;
+        this.humedad = humedad;
+        this.viento = viento;
+        this.nubosidad = nubosidad;
+        this.lluvia = lluvia;
+        this.temperatura = temperatura;
+        this.id = id;
     }
 }
 class ClimaPasadoMañana {
     constructor(humedad, viento, nubosidad, lluvia, temperatura,id) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    this.id = id;
-    }
-}
-class ClimaATresDias {
-    constructor(humedad, viento, nubosidad, lluvia, temperatura,id) {
-    this.humedad = humedad;
-    this.viento = viento;
-    this.nubosidad = nubosidad;
-    this.lluvia = lluvia;
-    this.temperatura = temperatura;
-    this.id = id;
+        this.humedad = humedad;
+        this.viento = viento;
+        this.nubosidad = nubosidad;
+        this.lluvia = lluvia;
+        this.temperatura = temperatura;
+        this.id = id;
     }
 }
 
@@ -41,7 +31,7 @@ class ClimaDeHoy {
         this.lluvia = lluvia;
         this.temperatura = temperatura;
         this.id = id;
-        }
+    }
 }
 const ClimaParaMañana = [];
 ClimaParaMañana.push(
@@ -55,23 +45,19 @@ ClimaPMañana.push(
 );
 localStorage.setItem("Clima Pasado Mañana", JSON.stringify(ClimaPMañana));
 
-const ClimaTresDias = [];
-ClimaTresDias.push(
-    new ClimaATresDias("15%", "20Km/h", "2%", "No llueve", "19°",'Clima a Tres Dias'));
-
 const ClimaHoy = [];
 ClimaHoy.push(
     new ClimaDeHoy("78%", "33Km/h", "25%", "No llueve", "24°",'Clima de Hoy'));
 localStorage.setItem("clima de Hoy", JSON.stringify(ClimaHoy));
 
-
+//Aplicacion de Spread//
 const ClimaParaHoy = JSON.parse(localStorage.getItem("clima de Hoy"));
-console.log(ClimaParaHoy)
+console.log(...ClimaParaHoy)
 const ClimaparaMañana = JSON.parse(localStorage.getItem("Clima para mañana"));
-console.log(ClimaparaMañana)
+console.log(...ClimaparaMañana)
 const ClimaParaPasadoMañana = JSON.parse(localStorage.getItem("Clima Pasado Mañana"));
-console.log(ClimaParaPasadoMañana)
+console.log(...ClimaParaPasadoMañana)
 
 
-export{ClimaParaMañana,ClimaPMañana,ClimaTresDias,ClimaHoy}
+export{ClimaParaMañana,ClimaPMañana,ClimaHoy}
 

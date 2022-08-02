@@ -7,7 +7,6 @@
 body{
     background-image: url('https://source.unsplash.com/1600x1000/?landscape'); 
     background-size: cover;
-    background-repeat: no-repeat;
     height: 100vh;
 }
 header{
@@ -149,7 +148,7 @@ h1#Clima{
     border-radius: 8px;
 }
 .clima_hoy{
-    font-size: 15px;
+    font-size: 20px;
 }
 
 

@@ -42,11 +42,7 @@ function llamadoAPI(ciudad, pais) {
       return data.json();
     })
     .then((dataJSON) => {
-      if (dataJSON.cod === "404") {
-        mostrarError("Ciudad no encontrada...");
-      } else {
-        mostrarClima(dataJSON);
-      }
+      dataJSON.cod === "404" ? mostrarError("Ciudad no encontrada...") : mostrarClima(dataJSON);
     });
 }
 
@@ -106,23 +102,22 @@ function mostrarClima(data) {
   <h4>${maxT}°</h4>`;
   descriptionn.innerHTML = description;
 
-  if (description === "clear sky") {
-    document.body.style.backgroundImage = "url('./img/despejado.jpg')";
-  } else if (description === "rain" || "shower rain" || "light rian") {
-    document.body.style.backgroundImage = "url('./img/lluvia.jpg')";
-  } else if (description === "light snow" || "light snow") {
-    document.body.style.backgroundImage = "url('./img/nieve.jpg')";
-  } else if (description === "thunderstorm") {
-    document.body.style.backgroundImage = "url('./img/tormenta.jpg')";
-  } else if (
-    description === "overcast clouds" ||
-    "few clouds" ||
-    "scattered clouds" ||
-    "broken clouds"
-  ) {
-    document.body.style.backgroundImage = "url('./img/nublado.jpg')";
-  }
+   if (description === "clear sky") {
+     document.body.style.backgroundImage = "url('./img/despejado.jpg')";
+   } else if (description === "rain" || "shower rain" || "light rian") {
+     document.body.style.backgroundImage = "url('./img/lluvia.jpg')";
+   } else if (description === "light snow" || "light snow") {
+     document.body.style.backgroundImage = "url('./img/nieve.jpg')";
+   } else if (description === "thunderstorm") {
+     document.body.style.backgroundImage = "url('./img/tormenta.jpg')";
+   } else if (
+     description === "overcast clouds" || "few clouds" || "scattered clouds" || "broken clouds") {
+     document.body.style.backgroundImage = "url('./img/nublado.jpg')";
+   }
+  // description === "clear sky" ? document.body.style.backgroundImage = "url('./img/despejado.jpg')" : description === "rain" || "shower rain" || "light rian" ? document.body.style.backgroundImage = "url('./img/lluvia.jpg')" : description === "light snow"  ? document.body.style.backgroundImage = "url('./img/nieve.jpg')" : description === "thunderstorm" ? document.body.style.backgroundImage = "url('./img/tormenta.jpg')" :  description === "overcast clouds" || "few clouds" || "scattered clouds" || "broken clouds" ? document.body.style.backgroundImage = "url('./img/nublado.jpg')"
 }
+
+
 
 function mostrarError(mensaje) {
   const alerta = document.createElement("p");

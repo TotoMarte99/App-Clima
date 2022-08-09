@@ -10,74 +10,75 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="shortcut icon" href="./img/android-chrome-192x192.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body id="body">
-    
     <header>
+     
       <div class="busqueda">
         <form id="buscando">
-        <input class="buscador" id="buscar" type="text" placeholder="Buscar Ubicación" />
-        <button class="boton">🔍​</button>
-      </form>
+          <input class="buscador" id="buscarPais" type="text" placeholder="Write a country" />
+          <input class="buscador" id="buscarCiudad" type="text" placeholder="Write a city" />
+          <button id="subirInfo" class="boton">🔍​</button>
+        </form>
       </div>
-      
       <div class="detalles_clima">
-        <h2>Detalles clima</h2>
+        <h2>Weather Report </h2>
         <div class="nubosidad">
-          <h3>Nubosidad :</h3>
-          <h3 id="nubosidad">25%</h3>
+          <h3>Clouds :</h3>
+          <h3 id="nubosidad">-</h3>
         </div>
         <div class="humedad">
-          <h3>Humedad : </h3>
-          <h3 id="humedad">78%</h3>
+          <h3>Humidity : </h3>
+          <h3 id="humedad">-</h3>
         </div>
         <div class="viento">
-          <h3>Viento : </h3>
-          <h3 id="viento">33 Km/h</h3>
+          <h3>Wind : </h3>
+          <h3 id="viento">-</h3>
         </div> 
       </div>
     </header>
     <section>
-      <div class="temperatura" >
-      <div class="botones">
-        <div class="detalles_dia" id="fecha_1"></div>
-        <button class="celcius" id="boton_celcius"> <img src="./img/celsius.png"  alt=""></button>
-        <button class="farenheit" id="boton_farenheit"> <img src="./img/fahrenheit-degrees.png"  alt=""></button>
+      <div class="btn_int">
+        <button class="btn_ChangeWather" id="F">°F</button>
+        <button class="btn_ChangeWather" id = "C">°C</button>
       </div>
-      
+        <div class="temperatura" >
+        <div class="botones">
+          <div class="detalles_dia" id="fecha_1"></div>
+        </div>
       <div class="temperatura_principal">
         <div class="clima_futuro">
-        <h1 id="Clima"> 
-          <p class="clima_hoy">Hoy 🌥️​</p>
-          24°C
-        </h1>    
-      </div>
-        <div class="clima_futuro">
-          <h1 id="climaMañana">
-            <p class="temperatura_mañana">Domingo ⛈️​ </p>
-            15°C
-          </h1>
-          <h1 id="climaPasadoMañana">
-            <p class="temperatura_mañana">Lunes 🌤️​</p>
-          9°C
-          </h1>
+          <h1 id="Clima"> 
+            <div id="img"></div>
+            <h1 id="temperatura_hoy"></h1>
+          </h1>    
         </div>
-      </div>
+        <div class="MaxMin">
+          <h4 id="min"></h4> 
+          <h4 id="max"></h4>
+        </div>
+        <div id="weather"></div>
       </div>
       <div class="ciudad">
-        <h2 id="ciudades">Rosario</h2>
-        <div id="banner_informativo">
-        
-        </div>
+        <div id="banner_informativo"></div>
+        <h2 class="ciudad"id="ciudades"></h2>
       </div>
-      
-      
     </section>
 
     
-    
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="./js/app.js" type="module"></script>
   </body>

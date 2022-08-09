@@ -5,18 +5,18 @@
 }
 
 body{
-    background-image: url('https://source.unsplash.com/1600x1000/?landscape'); 
+    background-image: url('../img/wallpaperbetter.com_1920x1080.jpg'); 
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    
 }
-header{
-    padding: 20px;
-    background-color: rgb(167 167 167 / 60%)
-}
+
+    
 .busqueda{
     display: flex;
-    padding: 10px;
+    padding: 20px;
     justify-content: space-evenly;
+    
 
 }
 input.buscar {
@@ -38,6 +38,26 @@ button {
     background: white;
     box-shadow: black 2px 2px 8px ;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 40px;
+}
+
+.btn_ChangeWather{
+    display: block;
+    font-weight: 600;
+}
+
+.botones{
+    margin-top: 15px;
+}
+.btn_int{
+    display: flex;
+}
+form#buscando{
+    display: flex;
+    flex-direction: column;
 }
 .celcius img{
     width: 30px;
@@ -69,12 +89,14 @@ button {
     text-align: center;
     padding: 10px;
     text-shadow: 5px 2px 8px black;
+    
 }
 .nubosidad{
     display: flex;
     justify-content: space-around;
     padding: 10px;
     text-shadow: 5px 2px 8px black;
+    font-weight: 600;
 }
 .humedad{
     display: flex;
@@ -95,6 +117,7 @@ button {
     padding-bottom: 50px;
     color: rgb(255, 251, 251);
     text-shadow: 5px 2px 8px black; 
+    padding: 0%;
 }
 .ciudad{
     font-size: 25px;
@@ -103,52 +126,32 @@ button {
     text-align: center;
     text-shadow: 5px 2px 8px black;
 }
-.detalles_dia{
-    text-align: center;
-    color: white;
-    text-shadow: 5px 2px 8px black;
-    font-size: 17px;
-}
-.clima_futuro{
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    padding-top: 20px;
-}
-.temperatura_mañana{
-    font-size: 15px;
-}
+
 
 .temperatura_principal h1{
-    font-size: 40px;
+    font-size: 80px;
 }
 .buscador{
     padding: 15px;
     border-radius: 10px;
     border: none;
     box-shadow: black 2px 4px 8px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
-h1#climaMañana{
-    background-color: rgb(167 167 167 / 80%);
-    padding: 10px;
-    box-shadow: aliceblue 2px 5px 8px;
-    border-radius: 8px;
-}
-h1#climaPasadoMañana{
-    background-color: rgb(167 167 167 / 80%);
-    padding: 10px;
-    box-shadow: aliceblue 2px 5px 8px;
-    border-radius: 8px;
-}
-h1#Clima{
-    padding: 40px;
-    background-color: rgb(167 167 167 / 80%);
-    padding: 10px;
-    box-shadow: aliceblue 2px 5px 8px;
-    border-radius: 8px;
-}
+
 .clima_hoy{
-    font-size: 20px;
+    font-size: 50px;
+}
+.MaxMin{
+    display: flex;
+    justify-content: space-around;
+}
+small{
+    font-size: large;
+}
+.ciudad{
+    font-size: x-large;
 }
 
 
@@ -170,6 +173,10 @@ h1#Clima{
     .detalles_clima{
         font-size: 20px;
     }
+    form#buscando{
+        display: flex;
+        flex-direction: row;
+    }
     footer{
         position: absolute;
         bottom: 0%;
@@ -177,6 +184,9 @@ h1#Clima{
         color: white;
         font-weight: 700;
         right: 40%;
+    }
+    button#subirInfo {
+        margin-left: 15px;
     }
 }
 @media screen and (min-width: 1024px){
@@ -186,6 +196,10 @@ h1#Clima{
     }
     button{
         width: 40px;
+    }
+    form#buscando{
+        display: flex;
+        flex-direction: row;
     }
     footer{
         position: absolute;
@@ -217,6 +231,7 @@ h1#Clima{
         padding: 20px;
         width: 400px;
     }
+    }
     button{
         width: 50px;
     }
@@ -235,6 +250,7 @@ h1#Clima{
         font-weight: 700;
         right: 47%;
     }
-}
+    
+
 
 

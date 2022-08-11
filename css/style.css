@@ -1,0 +1,256 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    background-image: url('../img/paisaje-de-lago-al-atardecer_3840x2160_xtrafondos.com.jpg'); 
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+    
+.busqueda{
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    
+
+}
+input.buscar {
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: black 2px 2px 8px ;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black
+}
+input.placeholder{
+    color: white;
+}
+button {
+    padding: 6px;
+    border-radius: 20px;
+    border-style: none;
+    background: white;
+    box-shadow: black 2px 2px 8px ;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 40px;
+}
+
+.btn_ChangeWather{
+    display: block;
+    font-weight: 600;
+}
+
+.botones{
+    margin-top: 15px;
+}
+.btn_int{
+    display: flex;
+}
+form#buscando{
+    display: flex;
+    flex-direction: column;
+}
+.celcius img{
+    width: 30px;
+    height: 30px;
+    
+}
+.farenheit img{
+    width: 30px;
+    height: 30px;
+    
+}
+.kelvin img{
+    width: 30px;
+    height: 30px;
+    
+}
+.celcius .farenheit .kelvin{
+    background-color: transparent;
+}
+.clima{
+    padding: 10px;
+}
+.detalles_clima{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.detalles_clima h2{
+    text-align: center;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+    
+}
+.nubosidad{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+    font-weight: 600;
+}
+.humedad{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.viento{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-shadow: 5px 2px 8px black;
+}
+.temperatura{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: rgb(255, 251, 251);
+    text-shadow: 5px 2px 8px black; 
+    padding: 0%;
+}
+.ciudad{
+    font-size: 25px;
+    padding-bottom: 80px;
+    color: white;
+    text-align: center;
+    text-shadow: 5px 2px 8px black;
+}
+
+
+.temperatura_principal h1{
+    font-size: 80px;
+}
+.buscador{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: black 2px 4px 8px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.clima_hoy{
+    font-size: 50px;
+}
+.MaxMin{
+    display: flex;
+    justify-content: space-around;
+}
+small{
+    font-size: large;
+}
+.ciudad{
+    font-size: x-large;
+}
+
+
+/* RESPONSIVE */
+
+/*Moviles en horizontal o tables verticales*/
+@media screen and (min-width: 768px){
+    header{
+        margin: 20px;
+        border-radius: 30px;
+    }
+    .busqueda{
+        padding: 20px;
+        justify-content: center;
+    }
+    .buscar{
+        margin-right: 15px;
+    }
+    .detalles_clima{
+        font-size: 20px;
+    }
+    form#buscando{
+        display: flex;
+        flex-direction: row;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 40%;
+    }
+    button#subirInfo {
+        margin-left: 15px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .buscar{
+        padding: 10px;
+        width: 300px;
+    }
+    button{
+        width: 40px;
+    }
+    form#buscando{
+        display: flex;
+        flex-direction: row;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 44%;
+    }
+}
+@media screen and (min-width: 1650px){
+    .temperatura{
+        font-size: 100px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 45%;
+    }
+}
+@media screen and (min-width: 2000px){
+    .detalles_clima{
+        font-size: 30px;
+    }
+    .buscar{
+        padding: 20px;
+        width: 400px;
+    }
+    }
+    button{
+        width: 50px;
+    }
+    .ciudad{
+        font-size: 40px;
+    }
+    .detalles_dia{
+        font-size: 30px;
+        padding: 60px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0%;
+        padding-top: 90px;
+        color: white;
+        font-weight: 700;
+        right: 47%;
+    }
+    
+
+
+

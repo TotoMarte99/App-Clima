@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Clima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body id="body">
+    <header>
+     
+      <div class="busqueda">
+        <form id="buscando">
+          <input class="buscador" id="buscarPais" type="text" placeholder="Write a country" />
+          <input class="buscador" id="buscarCiudad" type="text" placeholder="Write a city" />
+          <button type="submit" id="subirInfo" class="boton">🔍​</button>
+        </form>
+      </div>
+      <div class="detalles_clima">
+        <h2>Weather Report </h2>
+        <div class="nubosidad">
+          <h3>Clouds :</h3>
+          <h3 id="nubosidad">-</h3>
+        </div>
+        <div class="humedad">
+          <h3>Humidity : </h3>
+          <h3 id="humedad">-</h3>
+        </div>
+        <div class="viento">
+          <h3>Wind : </h3>
+          <h3 id="viento">-</h3>
+        </div> 
+      </div>
+    </header>
+    <section>
+      <div class="btn_int">
+        <button type="button" class="btn_ChangeWather" id="F">°F</button>
+        <button type="button" class="btn_ChangeWather" id = "C">°C</button>
+      </div>
+        <div class="temperatura" >
+        <div class="botones">
+          <div class="detalles_dia" id="fecha_1"></div>
+        </div>
+      <div class="temperatura_principal">
+        <div class="clima_futuro">
+          <h1 id="Clima"> 
+            <div id="img"></div>
+            <h1 id="temperatura_hoy"></h1>
+          </h1>    
+        </div>
+        <div class="MaxMin">
+          <h4 id="min"></h4> 
+          <h4 id="max"></h4>
+        </div>
+        <div id="weather"></div>
+      </div>
+      <div class="ciudad">
+        <div id="banner_informativo"></div>
+        <h2 class="ciudad"id="ciudades"></h2>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
+
